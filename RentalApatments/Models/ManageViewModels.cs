@@ -12,6 +12,7 @@ namespace RentalApatments.Models
         public string PhoneNumber { get; set; }
         public bool TwoFactor { get; set; }
         public bool BrowserRemembered { get; set; }
+        public IList<string> roles { get; set; }
     }
 
     public class ManageLoginsViewModel
