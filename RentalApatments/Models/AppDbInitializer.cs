@@ -25,7 +25,7 @@ namespace RentalApatments.Models
 
             // создаем пользователя
             var admin = new ApplicationUser { Email = "admin@gmail.com", UserName = "admin@gmail.com" };
-            string password = "admin123";
+            string password = "Admin123";
             var result = userManager.Create(admin, password);
 
             // если создание пользователя прошло успешно
