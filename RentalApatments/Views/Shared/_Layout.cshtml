@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @using Microsoft.AspNet.Identity;
@@ -23,12 +23,13 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Про нас", "About", "Home")</li>
                     <li>@Html.ActionLink("Контакти", "Contact", "Home")</li>
-                    @if (User.Identity.IsAuthenticated)
+                    @if (User.Identity.AuthenticationType="admin")
                     {
                        
                         <li>@Html.ActionLink("Додати оголошення", "AddAdvert", "Home")</li>
                         <li>@Html.ActionLink("Переглянути оголошення", "ShowAdvert", "Home")</li>
                     }
+
                   
                 </ul>
                 @Html.Partial("_LoginPartial")

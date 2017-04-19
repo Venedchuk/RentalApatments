@@ -14,7 +14,8 @@ namespace RentalApatments
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<ApplicationDbContext>(new AppDbInitializer());
+            //Database.SetInitializer<ApplicationDbContext>(new AppDbInitializer());
+            Database.SetInitializer<ApplicationDbContext>(null);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

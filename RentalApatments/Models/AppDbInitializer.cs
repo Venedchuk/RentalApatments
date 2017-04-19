@@ -23,6 +23,8 @@ namespace RentalApatments.Models
             roleManager.Create(role2);
             roleManager.Create(role3);
 
+            
+
             // создаем пользователя
             var admin = new ApplicationUser { Email = "admin@gmail.com", UserName = "admin@gmail.com" };
             string password = "Admin123";

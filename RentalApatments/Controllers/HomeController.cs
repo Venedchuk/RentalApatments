@@ -12,8 +12,10 @@ namespace RentalApatments.Controllers
     //var name = User.Identity.GetUserId();
     public class HomeController : Controller
     {
+        private ApplicationContext db = new ApplicationContext();
         public ActionResult Index()
         {
+            
             return View();
         }
 
@@ -33,6 +35,7 @@ namespace RentalApatments.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Description page.";
+
             return View();
         }
 

@@ -14,8 +14,8 @@ namespace RentalApatments.Models
         public Guid Id { get; set; }
         public string Name { get; set; }
         public virtual IEnumerable<TypeRent> TypeRent { get; set; }
-
     }
+
     public class TypeRent
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -38,8 +38,7 @@ namespace RentalApatments.Models
         [Key]
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public IEnumerable<TypeDescriptionRealty> Answers { get; set;}
-
+        public IEnumerable<TypeDescriptionRealty> Answers { get; set; }
     }
 
     public class TypeDescriptionRealty

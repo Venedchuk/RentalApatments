@@ -9,15 +9,16 @@ namespace RentalApatments.Models
 {
     public class ApplicationContext : DbContext
     {
-        public ApplicationContext() : base("DefaultConnection") { }
+        public ApplicationContext() : base("DefaultConnection") {
 
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationContext>());
+        }
         //database entities here
-        DbSet<TypeDeal> TypeDeals { get; set; }
-        DbSet<TypeRent> TypeRents { get; set; }
-        DbSet<TypeForWhatRealty> TypeForWhatRealtys { get; set; }
-        DbSet<CurrectRealty> CurrectRealties { get; set; }
-        DbSet<TypeDescriptionRealty> TypeDescriptionRealties { get; set; }
-        DbSet<TypeAnswer> TypeAnswers { get; set; }
-       
+        public DbSet<TypeDeal> TypeDeals { get; set; }
+        public DbSet<TypeRent> TypeRents { get; set; }
+        public DbSet<TypeForWhatRealty> TypeForWhatRealtys { get; set; }
+        public DbSet<CurrectRealty> CurrectRealties { get; set; }
+        public DbSet<TypeDescriptionRealty> TypeDescriptionRealties { get; set; }
+        public DbSet<TypeAnswer> TypeAnswers { get; set; }
     }
 }

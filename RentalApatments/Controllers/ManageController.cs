@@ -138,6 +138,39 @@ namespace RentalApatments.Controllers
             return RedirectToAction("VerifyPhoneNumber", new { PhoneNumber = model.Number });
         }
 
+        [Authorize(Roles = "admin")]
+        public ActionResult Initialize()
+        {
+            
+            using ( ApplicationContext db = new ApplicationContext())
+            {
+                try
+                {
+                    var input = new TypeAnswer() { Name = "input" };
+                    var checkbox = new TypeAnswer() { Name = "checkboxes" };
+                    var radiobutton = new TypeAnswer() { Name = "radiobutton" };
+                    db.TypeAnswers.Add(input);
+                    db.TypeAnswers.Add(checkbox);
+                    db.TypeAnswers.Add(radiobutton);
+                    db.TypeDescriptionRealties.Add(new TypeDescriptionRealty() {Type = input });
+
+
+                    ViewBag.Message = "Init succesful";
+                }
+                catch (Exception a)
+                {
+
+                    ViewBag.Message = "Init false";
+                }
+                finally
+                {
+                    db.SaveChangesAsync();
+                }
+            }
+           
+            return View();
+        }
+
         //
         // POST: /Manage/EnableTwoFactorAuthentication
         [HttpPost]
