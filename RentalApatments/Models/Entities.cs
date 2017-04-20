@@ -49,6 +49,12 @@ namespace RentalApatments.Models
         public string Name { get; set; }
         public virtual TypeAnswer Type { get; set; }
         public IEnumerable<string> Answer { get; set; }
+        public virtual TypeAnswer TypeАddition { get; set; }
+        public IEnumerable<string> АdditionAnswer { get; set; }
+        public virtual TypeAnswer TypeАddition2 { get; set; }
+        public IEnumerable<string> АdditionAnswer2 { get; set; }
+
+
     }
     public class TypeAnswer
     {

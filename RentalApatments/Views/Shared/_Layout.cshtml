@@ -23,7 +23,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Про нас", "About", "Home")</li>
                     <li>@Html.ActionLink("Контакти", "Contact", "Home")</li>
-                    @if (User.Identity.AuthenticationType="admin")
+                    @if (User.Identity.IsAuthenticated)
                     {
                        
                         <li>@Html.ActionLink("Додати оголошення", "AddAdvert", "Home")</li>
