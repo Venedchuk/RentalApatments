@@ -48,6 +48,7 @@ namespace RentalApatments.Models
         public Guid Id { get; set; }
         public string Name { get; set; }
         public virtual TypeAnswer Type { get; set; }
+        public string Description { get; set; }
         public IEnumerable<string> Answer { get; set; }
         public virtual TypeAnswer TypeАddition { get; set; }
         public IEnumerable<string> АdditionAnswer { get; set; }
@@ -58,9 +59,8 @@ namespace RentalApatments.Models
     }
     public class TypeAnswer
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }
